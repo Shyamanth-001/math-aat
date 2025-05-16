@@ -76,58 +76,58 @@ display('Gradient at (1,2,3)=', G1)
   <h2>Divergence of Vector Field</h2>
   <p><strong>Vector:</strong> F = 2x²z î - xyz² ĵ + 3yz² k̂ at (1, 1, 1)</p>
   <pre>
- from sympy.vector import *
- C= CoordSys3D (' ')
- x,y,z = C.x, C.y,C.z
- i,j,k=C.i,C.j,C.k
- F=(2*x**2*z)*i-(x*y**2*z)*j+(3*y*z**2)*k
- G= divergence(F)
- display('div F=',G)
- G1=G.subs({x:1,y:1,z:1}).evalf()
- display('Div F at (1,1,1) is ', G1)
+from sympy.vector import *
+C= CoordSys3D (' ')
+x,y,z = C.x, C.y,C.z
+i,j,k=C.i,C.j,C.k
+F=(2*x**2*z)*i-(x*y**2*z)*j+(3*y*z**2)*k
+G= divergence(F)
+display('div F=',G)
+G1=G.subs({x:1,y:1,z:1}).evalf()
+display('Div F at (1,1,1) is ', G1)
   </pre>
 
   <h3>Solenoidal Vector Field Check</h3>
   <pre>
 from sympy.vector import *
- C= CoordSys3D (' ')
- x,y,z = C.x, C.y,C.z
- i,j,k=C.i,C.j,C.k
- F=(2*(x**2)*z)*i-(10*x*y*z)*j+(3*x*(z**2))*k
- G = divergence(F)
- print('The divergence of f is',G)
- if G==0:
+C= CoordSys3D (' ')
+x,y,z = C.x, C.y,C.z
+i,j,k=C.i,C.j,C.k
+F=(2*(x**2)*z)*i-(10*x*y*z)*j+(3*x*(z**2))*k
+G = divergence(F)
+print('The divergence of f is',G)
+if G==0:
    print("The  given vector is solendial")
- else:
+else:
    print("The  given vector is not solendial")
   </pre>
 
   <h2>Curl of Vector Field</h2>
   <p><strong>Vector:</strong> F = xy*z² î + yz*x² ĵ + zx*y² k̂ at (1, 2, 3)</p>
   <pre>
- from sympy.vector import *
- C= CoordSys3D (' ')
- x,y,z = C.x, C.y,C.z
- i,j,k=C.i,C.j,C.k
- f=(x*y*z**2)*i+(y*z*x**2)*j+(z*x*y**2)*k
- G = curl(f)
- G1=G.subs({x:1,y:2,z:3}).evalf()
- display('Curl F at (1,2,3) is ', G1)
+from sympy.vector import *
+C= CoordSys3D (' ')
+x,y,z = C.x, C.y,C.z
+i,j,k=C.i,C.j,C.k
+f=(x*y*z**2)*i+(y*z*x**2)*j+(z*x*y**2)*k
+G = curl(f)
+G1=G.subs({x:1,y:2,z:3}).evalf()
+display('Curl F at (1,2,3) is ', G1)
   </pre>
 
   <h3>Irrotational Vector Field Check</h3>
   <p><strong>Vector:</strong> F = (6xy + z³) î + (3x² − z) ĵ + (3xz² − y) k̂</p>
   <pre>
 from sympy.vector import *
- C= CoordSys3D (' ')
- x,y,z = C.x, C.y,C.z
- i,j,k=C.i,C.j,C.k
- F=(6*x*y+z**3)*i+(3*x**2-z)*j+(3*x*z**2-y)*k
- G = curl(F)
- display('The Curl of f is',G)
- if G==0*i+0*j+0*k:
+C= CoordSys3D (' ')
+x,y,z = C.x, C.y,C.z
+i,j,k=C.i,C.j,C.k
+F=(6*x*y+z**3)*i+(3*x**2-z)*j+(3*x*z**2-y)*k
+G = curl(F)
+display('The Curl of f is',G)
+if G==0*i+0*j+0*k:
    print("The  given vector is irrotataional")
- else:
+else:
    print("The  given vector is not irrotataional ")
   </pre>
  
